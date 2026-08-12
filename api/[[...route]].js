@@ -1,7 +1,7 @@
-import server from "../dist/server/server.js";
+import server from "./server/server.js";
 
 export default async function handler(req, res) {
-  if (!server.fetch) {
+  if (!server || !server.fetch) {
     return res.status(500).json({ error: "Server not initialized" });
   }
 

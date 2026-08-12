@@ -1,11 +1,7 @@
 {
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist",
+  "buildCommand": "npm run build && cp -r dist/server api/server || copy /Y dist\\server api\\server",
+  "outputDirectory": "dist/client",
   "rewrites": [
-    {
-      "source": "/assets/(.*)",
-      "destination": "/assets/$1"
-    },
     {
       "source": "/(.*)",
       "destination": "/api/[[...route]]"
